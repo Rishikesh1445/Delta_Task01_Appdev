@@ -12,7 +12,6 @@ import android.media.MediaPlayer
 import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -457,7 +456,6 @@ class GameViewModel : ViewModel() {
         LaunchedEffect(Unit) {
             if(state.value.timer){_state.value =_state.value.copy(PlayerScoreB = state.value.PlayerScoreB+ (state.value.timeLeftB/2))}
             if (!hasExecutedOnce) {
-                Log.d("Rishi", "Coroutine ${state.value.PlayerScoreB}")
                 __state.value.dataToBeSent = __state.value.dataReceived
                 __state.value = __state.value.copy(
                     dataToBeSent = statee.value.dataToBeSent + "${state.value.PlayerBName}                               ${state.value.PlayerScoreB}\n"
